@@ -17,17 +17,17 @@
 
                         <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
 
-                        <div class="rounded-2xl border border-blue-700/20 bg-black/60 px-4 py-3">
+                        <div class="rounded-2xl border border-white/10 bg-black/60 px-4 py-3">
                             <p class="text-xs uppercase tracking-[0.24em] text-white/45">Карточек</p>
                             <p class="mt-2 text-xl font-semibold color-blue-600">{{ items.length }}</p>
                         </div>
 
-                        <div class="rounded-2xl border border-blue-700/20 bg-black/60 px-4 py-3">
+                        <div class="rounded-2xl border border-white/10  bg-black/60 px-4 py-3">
                             <p class="text-xs uppercase tracking-[0.24em] text-white/45">Найдено</p>
                             <p class="mt-2 text-xl font-semibold">{{ filteredItems.length }}</p>
                         </div>
 
-                        <div class="col-span-2 rounded-2xl border border-blue-700/20 bg-black/60 px-4 py-3 sm:col-span-1">
+                        <div class="col-span-2 rounded-2xl border border-white/10 bg-black/60 px-4 py-3 sm:col-span-1">
                             <p class="text-xs uppercase tracking-[0.24em] text-white/45">Фильтр</p>
                             <p class="mt-2 font-medium">{{ selectedCategory }}</p>
                         </div>
@@ -62,7 +62,7 @@
 
                                 <select 
                                     v-model="form.category" 
-                                    class="w-full rounded-2xl border border-white/10 bg-black/60 px-4 py-3 text-white outline-none transition focus:border-blue-600/70"
+                                    class="w-full rounded-2xl bg-black/60 px-4 py-3 text-white outline-none transition focus:border-blue-600/70"
                                     >
 
                                 <option v-for="category in categories" :key="category" :value="category">{{ category }}</option>
@@ -167,7 +167,7 @@
 
                         <TransitionGroup name="card-list" tag="div" class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
 
-                            <article v-for="item in filteredItems" :key="item.id" class="card-item overflow-hidden rounded-3xl border border-blue-700/20 bg-white/5 shadow-[0_0px_0px_rgba(0,0,0,0.35)]">
+                            <article v-for="item in filteredItems" :key="item.id" class="card-item overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-[0_0px_0px_rgba(0,0,0,0.35)] hover:border-blue-700/20">
 
                                 <div class="relative aspect-[16/10] overflow-hidden bg-white/5">
                                     <img :src="item.image" :alt="item.title" class="h-full w-full object-cover" />
@@ -418,6 +418,6 @@ function safelyParseLocalStorage(key) {
 
 .card-item:hover {
     transform: translateY(-4px);
-    box-shadow: 0 2px 4px rgba(29, 78, 216, 0.2);
+    box-shadow: 0 4px 8px rgba(29, 78, 216, 0.2);
 }
 </style>
